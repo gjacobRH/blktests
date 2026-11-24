@@ -163,7 +163,7 @@ _check_dmesg() {
 	fi
 
 	_dmesg_since_test_start | bash -c "$DMESG_FILTER" >"${seqres}.dmesg"
-	grep -q -e "kernel BUG at" \
+	grep -q -w -e "kernel BUG at" \
 	     -e "WARNING:" \
 	     -e "BUG:" \
 	     -e "Oops:" \
